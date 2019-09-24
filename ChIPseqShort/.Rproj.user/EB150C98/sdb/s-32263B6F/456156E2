@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "^.*\\.Rproj$\n^\\.Rproj\\.user$\nrobjects\n",
+    "created" : 1465341823487.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3690120685",
+    "id" : "456156E2",
+    "lastKnownWriteTime" : 1465341833,
+    "last_content_update" : 1465341833019,
+    "path" : "~/GitHub/Unlinked_ButClose/ChIPseqShort/.Rbuildignore",
+    "project_path" : ".Rbuildignore",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}

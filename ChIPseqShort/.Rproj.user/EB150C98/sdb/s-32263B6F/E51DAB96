@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "exportPattern(\"^[[:alpha:]]+\")\n",
+    "created" : 1465341612431.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4116331488",
+    "id" : "E51DAB96",
+    "lastKnownWriteTime" : 1465337613,
+    "last_content_update" : 1465337613,
+    "path" : "~/GitHub/Unlinked_ButClose/ChIPseqShort/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}

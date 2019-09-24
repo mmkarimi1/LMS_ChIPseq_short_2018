@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: ChIPseqShort\nType: Package\nTitle: What the Package Does (Title Case)\nVersion: 0.1.0\nAuthor: Who wrote it\nMaintainer: Who to complain to <yourfault@somewhere.net>\nDescription: More about what it does (maybe more than one line)\nLicense: What license is it under?\nLazyData: TRUE\nbiocViews: Training\nDepends: R (>= 2.10), methods, BiocGenerics (>= 0.17.5), GenomicRanges\nSuggests: knitr,\n    rmarkdown\nVignetteBuilder: knitr\n",
+    "created" : 1465341517862.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2501918254",
+    "id" : "42CFC9B5",
+    "lastKnownWriteTime" : 1465342591,
+    "last_content_update" : 1465342591645,
+    "path" : "~/GitHub/Unlinked_ButClose/ChIPseqShort/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

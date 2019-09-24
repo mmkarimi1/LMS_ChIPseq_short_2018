@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "## ----setup, include=FALSE------------------------------------------------\nknitr::opts_chunk$set(echo = T,eval = T)\n\n## ----collapse=T----------------------------------------------------------\n# Load the GenomicRanges Library .. here is suppress messages for a cleaner document\nsuppressPackageStartupMessages(\n  library(GenomicRanges)\n  )\n\npeakFile1 <- system.file(\"extdata\", \"/MacsPeaks/mycmelrep1_peaks.xls\", package = \"ChIPseqShort\")\npeakFile2 <- system.file(\"extdata\", \"/MacsPeaks/mycmelrep2_peaks.xls\", package = \"ChIPseqShort\")\n\nmelPeak_Rep1 <- read.delim(peakFile1,sep=\"\\t\",comment.char = \"#\")\nmelPeak_Rep2 <- read.delim(peakFile2,sep=\"\\t\",comment.char = \"#\")\n\nmelRep1_GR <- GRanges(\n                  seqnames=melPeak_Rep1[,\"chr\"],\n                  IRanges(melPeak_Rep1[,\"start\"],\n                  melPeak_Rep1[,\"end\"]\n                  )\n                )\n\nmcols(melRep1_GR) <- melPeak_Rep1[,c(\"abs_summit\", \"fold_enrichment\")]\n\nmelRep1_GR\n\nmelRep2_GR <- GRanges(\n                  seqnames=melPeak_Rep2[,\"chr\"],\n                  IRanges(melPeak_Rep2[,\"start\"],\n                  melPeak_Rep2[,\"end\"]\n                  )\n                )\n\nmcols(melRep2_GR) <- melPeak_Rep2[,c(\"abs_summit\", \"fold_enrichment\")]\n\nmelRep2_GR\n\n\n## ---- warnings=F,collapse=T----------------------------------------------\n# Number of peaks\n\nlength(melRep1_GR)\n\nlength(melRep2_GR)\n\n# Number of peaks on chromosome 4\n\n# Using table on logical vector\n\ntable(seqnames(melRep1_GR) %in% \"4\")\n\ntable(seqnames(melRep2_GR) %in% \"4\")\n\n# Indexing and recounting\n\nlength(melRep1_GR[seqnames(melRep1_GR) %in% \"4\"])\n\nlength(melRep2_GR[seqnames(melRep2_GR) %in% \"4\"])\n\n\n# Number of peaks on chromosome 4 and with 5 fold enrichment above input\n\n# Using table on logical vector\n\ntable(seqnames(melRep1_GR) %in% \"4\" & melRep1_GR$fold_enrichment > 5)\n\ntable(seqnames(melRep2_GR) %in% \"4\" & melRep2_GR$fold_enrichment > 5)\n\n# Indexing and recounting\n\nlength(melRep1_GR[seqnames(melRep1_GR) %in% \"4\" & melRep1_GR$fold_enrichment > 5])\n\nlength(melRep2_GR[seqnames(melRep2_GR) %in% \"4\" & melRep2_GR$fold_enrichment > 5])\n\n\n## ---- warnings=F,collapse=T----------------------------------------------\n\n# Using table\n\ntable(melRep1_GR %over% melRep2_GR)\n\n# Using index and recounting\nlength(melRep1_GR[melRep1_GR %over% melRep2_GR])\n\n\n# Using table\n\ntable(!melRep1_GR %over% melRep2_GR)\n\n# Using index and recounting\nlength(melRep1_GR[!melRep1_GR %over% melRep2_GR])\n\ncommonMelPeaks <- melRep1_GR[melRep1_GR %over% melRep2_GR]\n\n## ---- warnings=F,collapse=T----------------------------------------------\n\n# Using table\n\nmelRep1_GRSummits <- melRep1_GR\n\nstart(melRep1_GRSummits) <- end(melRep1_GRSummits) <- melRep1_GR$abs_summit\n\nmelRep1_GRSummits\n\n",
+    "created" : 1465341987373.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2061692436",
+    "id" : "7021D46C",
+    "lastKnownWriteTime" : 1465341850,
+    "last_content_update" : 1465341850,
+    "path" : "~/GitHub/Unlinked_ButClose/fs/ChIPseqShort/inst/doc/WorkingWithPeaks.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
